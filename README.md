@@ -59,10 +59,10 @@ npm run dev
 ---
 
 ## 📦 Tech Stack
-- \*\*Backend\*\*: Java, Spring Boot, Spring Data JPA
-- \*\*Frontend\*\*: React, Vite, Axios
-- \*\*Build Tool\*\*: Maven
-- \*\*Database\*\*: List
+- **Backend**: Java, Spring Boot, Spring Data JPA
+- **Frontend**: React, Vite, Axios
+- **Build Tool**: Maven
+- **Database**: List
 ---
 
 ## 🧑‍💻 Author
