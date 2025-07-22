@@ -9,10 +9,21 @@ function App() {
   const refresh = () => setRefreshFlag(!refreshFlag);
 
   return (
-    <div>
-      <h1>Job Board</h1>
-      <JobForm selectedJob={selectedJob} refresh={refresh} clearEdit={() => setSelectedJob(null)} />
-      <JobList onEdit={(job) => setSelectedJob(job)} key={refreshFlag} />
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center text-indigo-700 mb-6">
+        Job Board
+      </h1>
+
+      <JobForm
+        selectedJob={selectedJob}
+        refresh={refresh}
+        clearEdit={() => setSelectedJob(null)}
+      />
+
+      <JobList
+        onEdit={(job) => setSelectedJob(job)}
+        key={refreshFlag}
+      />
     </div>
   );
 }
