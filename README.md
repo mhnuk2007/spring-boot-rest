@@ -67,8 +67,8 @@ npm run dev
 
 ## 🧑‍💻 Author
 
-- LinkedIn: \[Mohan Lal](https://www.linkedin.com/in/mohan-lal-b79790126/)
-- GitHub: \[mhnuk2007](https://github.com/mhnuk2007)
+- LinkedIn: [Mohan Lal](https://www.linkedin.com/in/mohan-lal-b79790126/)
+- GitHub: [mhnuk2007](https://github.com/mhnuk2007)
 
 
 
