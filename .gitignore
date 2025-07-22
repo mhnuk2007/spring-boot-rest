@@ -1,0 +1,14 @@
+# Java
+target/
+*.class
+*.log
+*.iml
+
+# Maven
+.mvn/
+
+# IntelliJ
+.idea/
+
+# Node.js
+node_modules/

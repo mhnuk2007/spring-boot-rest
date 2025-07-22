@@ -1,12 +1,54 @@
-# React + Vite
+# ⚛️ React Frontend - Job Post Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Job Post application, developed using **React** and **Vite**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Axios
+- Bootstrap
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✅ Features
+
+- Display list of job posts
+- Add new job post
+- Update existing job post
+- Delete job post
+- Connects to Spring Boot backend via REST API
+
+---
+
+## ▶️ Run Locally
+
+### 1. Install dependencies
+```bash
+npm install
+```
+
+### 2. Run the development server
+```bash
+npm run dev
+```
+
+Make sure the backend is running at `http://localhost:8080`.
+
+---
+
+## 🔧 Configuration
+
+The backend URL is set to:
+```javascript
+http://localhost:8080
+```
+Change this if your backend runs on a different port.
+
+---
+
+## 🧑‍💻 Author
+
+- GitHub: [mhnuk2007](https://github.com/mhnuk2007)
