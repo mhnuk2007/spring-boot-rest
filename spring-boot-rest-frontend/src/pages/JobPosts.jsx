@@ -7,20 +7,17 @@ function JobPosts() {
   const location = useLocation();
 
   useEffect(() => {
-    jobService.getAllJobs().then((res) => {
-      let allJobs = res.data;
-      const params = new URLSearchParams(location.search);
-      const keyword = params.get('search');
-      if (keyword) {
-        const lowerKeyword = keyword.toLowerCase();
-        allJobs = allJobs.filter(job =>
-          job.postProfile.toLowerCase().includes(lowerKeyword) ||
-          job.postDesc.toLowerCase().includes(lowerKeyword) ||
-          job.postTechStack.join(', ').toLowerCase().includes(lowerKeyword)
-        );
-      }
-      setJobs(allJobs);
-    });
+    const params = new URLSearchParams(location.search);
+    const keyword = params.get('search');
+    if (keyword) {
+      jobService.searchJobs(keyword).then((res) => {
+        setJobs(res.data);
+      });
+    } else {
+      jobService.getAllJobs().then((res) => {
+        setJobs(res.data);
+      });
+    }
   }, [location.search]);
 
   return (
