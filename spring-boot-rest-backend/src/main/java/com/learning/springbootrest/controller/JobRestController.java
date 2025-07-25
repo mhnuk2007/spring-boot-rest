@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin (origins = "http://localhost:5173")
+
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class JobRestController {
     @Autowired
@@ -14,33 +15,44 @@ public class JobRestController {
 
 
     @GetMapping("/jobPosts")
-      public List<JobPost> getAllJobs() {
+    public List<JobPost> getAllJobs() {
         return service.getAllJobs();
     }
 
     @GetMapping("/jobPost/{postId}")
-    public JobPost getJob(@PathVariable int postId){
+    public JobPost getJob(@PathVariable int postId) {
         return service.getJob(postId);
     }
 
-    @PostMapping ("/jobPost")
-    public JobPost addJob(@RequestBody JobPost jobPost){
+    @GetMapping("/jobPosts/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword) {
+        return service.searchByKeyword(keyword);
+    }
+
+    @PostMapping("/jobPost")
+    public JobPost addJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
         return getJob(jobPost.getPostId());
     }
 
     @PutMapping("/jobPost")
-    public JobPost updateJob(@RequestBody JobPost jobPost){
+    public JobPost updateJob(@RequestBody JobPost jobPost) {
         service.updateJob(jobPost);
         return getJob(jobPost.getPostId());
 
     }
 
     @DeleteMapping("/jobPost/{postId}")
-    public String deleteJob(@PathVariable int postId){
+    public String deleteJob(@PathVariable int postId) {
         service.deleteJob(postId);
         return "Deleted";
     }
 
+    @GetMapping("/load")
+    public String loadData() {
+        service.load();
+
+        return "Success";
+    }
 
 }
