@@ -24,8 +24,8 @@ function JobPosts() {
   }, [location.search]);
 
   return (
-    <div className="container pt-3">
-      <h2 className="mb-4 text-center">All Job Posts</h2>
+    <div className="container pt-4" style={{fontFamily: "'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif"}}>
+      <h2 className="mb-4 fw-bold" style={{fontWeight: 700}}>Job Posts</h2>
       <div className="row g-4">
         {jobs.map((job) => (
           <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={job.postId}>

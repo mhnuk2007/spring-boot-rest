@@ -7,7 +7,7 @@ This is the frontend for the Job Post application, developed using **React** and
 ## 📁 Repository Structure
 
 This repository (`spring-boot-rest`) contains both backend and frontend projects:
-- `spring-boot-rest-backend/` — Spring Boot REST API backend
+- `spring-boot-rest-backend/` — Spring Boot REST API backend (Java 21, PostgreSQL)
 - `spring-boot-rest-frontend/` — React frontend (this project)
 
 ---
@@ -19,16 +19,15 @@ This repository (`spring-boot-rest`) contains both backend and frontend projects
 - Axios
 - Bootstrap
 - Custom CSS (modern, responsive UI)
+- **Backend:** Spring Boot 3.5, Java 21, PostgreSQL
 
 ---
 
 ## ✅ Features
 
-- Modern, responsive UI with custom color scheme and fonts
-- Display list of job posts in card layout
-- Add new job post
-- Update existing job post
-- Delete job post
+- Modern, responsive UI with custom color scheme and Inter font
+- Display job posts in card layout
+- Add, update, delete job posts
 - View job post details
 - Keyword search for job posts (profile, description, tech stack)
 - Sticky navigation bar with search
@@ -58,7 +57,19 @@ The backend URL is set to:
 ```javascript
 http://localhost:8080
 ```
-Change this if your backend runs on a different port.
+
+---
+
+## 📘 Next Up
+- Database connectivity with PostgreSQL
+- Mastering Spring Data JPA
+- Building robust web apps with Spring MVC
+- Excited to explore next-level backend concepts and build more real-world applications!
+
+---
+
+## 🙌 Credits
+Special thanks to Udemy, TELUSKO, and Sir Navin Reddy for the structured and practical learning experience.
 
 ---
 
