@@ -1,24 +1,28 @@
-# 🚀 Spring Boot REST API - Job Post Application
+# 🚀 Spring Boot REST API - Job Portal Backend
 
 
-This is the backend REST API of the Job Post Application built with \*\*Spring Boot\*\*.
+This is the backend REST API for a Job Portal Application built with **Spring Boot**.
 
 ---
 
 ## 📦 Technologies
-- Java
-- Spring Boot
+- Java 21
+- Spring Boot 3.5.3
 - Spring Web
 - Spring Data JPA
-- H2 Database
+- PostgreSQL
+- Lombok
+- AOP (Aspect-Oriented Programming) for logging
 
 ---
 
 ## ✅ Features
-- RESTful API for CRUD operations
-- Data access using Spring Data JPA
-- List for database simulation
-- Tested via Postman
+- RESTful API for CRUD operations on job posts
+- Keyword search across job profile and description
+- Data persistence with PostgreSQL
+- CORS enabled for frontend integration
+- AOP-based logging of service method calls
+- Sample data loader endpoint
 
 ---
 
@@ -27,28 +31,44 @@ This is the backend REST API of the Job Post Application built with \*\*Spring B
 spring-boot-rest-backend/
 ├── controller/
 ├── model/
-├── repository/
-└── service/
-
+├── repo/
+├── service/
+├── aop/
+└── resources/
 ```
+
 ---
 ## 🔗 API Endpoints
 
-| Method | Endpoint           | Description          |
-|--------|--------------------|----------------------|
-| GET    | `/jobPosts`        | Get all job posts    |
-| GET    | `/jobPost/{id}`    | Get single job post  |
-| POST   | `/jobPost`         | Create job post      |
-| PUT    | `/jobPost`         | Update job post      |
-| DELETE | `/jobPost/{id}`    | Delete job post      |
+| Method | Endpoint                    | Description                        |
+|--------|-----------------------------|------------------------------------|
+| GET    | `/jobPosts`                 | Get all job posts                  |
+| GET    | `/jobPost/{postId}`         | Get single job post by ID          |
+| GET    | `/jobPosts/keyword/{keyword}` | Search job posts by keyword        |
+| POST   | `/jobPost`                  | Create a new job post              |
+| PUT    | `/jobPost`                  | Update an existing job post        |
+| DELETE | `/jobPost/{postId}`         | Delete a job post by ID            |
+| GET    | `/load`                     | Load sample job posts              |
+
 ---
 
+## ⚙️ Configuration
+
+Configure your PostgreSQL database in `src/main/resources/application.properties`:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/jobportaldb
+spring.datasource.username=postgres
+spring.datasource.password=YOUR_PASSWORD
+```
+
+---
 ## ▶️ Run Locally
 
 ```bash
 ./mvnw spring-boot:run
 ```
+
 ---
 
 ## 🧑‍💻 Author
-- GitHub: \[mhnuk2007](https://github.com/mhnuk2007)
+- GitHub: [mhnuk2007](https://github.com/mhnuk2007)
