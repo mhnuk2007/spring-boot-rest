@@ -12,7 +12,7 @@ This is the backend REST API for a Job Portal Application built with **Spring Bo
 - Spring Data JPA
 - PostgreSQL
 - Lombok
-- AOP (Aspect-Oriented Programming) for logging
+- AOP (Aspect-Oriented Programming) for logging, performance monitoring, and validation
 
 ---
 
@@ -22,6 +22,8 @@ This is the backend REST API for a Job Portal Application built with **Spring Bo
 - Data persistence with PostgreSQL
 - CORS enabled for frontend integration
 - AOP-based logging of service method calls
+- AOP-based performance monitoring of service methods
+- AOP-based validation for job ID normalization
 - Sample data loader endpoint
 
 ---
@@ -49,6 +51,16 @@ spring-boot-rest-backend/
 | PUT    | `/jobPost`                  | Update an existing job post        |
 | DELETE | `/jobPost/{postId}`         | Delete a job post by ID            |
 | GET    | `/load`                     | Load sample job posts              |
+
+---
+
+## 🛠️ Improvements & Fixes
+- Added ValidationAspect: normalizes negative job IDs to positive before service logic.
+- Added PerformanceAspect: logs execution time for getJob service method.
+- LoggingAspect improved: logs method calls, returns, exceptions for all JobService methods.
+- Fixed search functionality: repository method typo, correct parameter usage, and service/controller integration.
+- Ensured type compatibility for tech stack: changed String[] to List<String> in service layer.
+- Application verified to start and run on port 8080.
 
 ---
 

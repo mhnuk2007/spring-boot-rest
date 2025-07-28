@@ -1,7 +1,7 @@
 package com.learning.springbootrest.aop;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -14,9 +14,26 @@ public class LoggingAspect {
 
     //return type, class name.method name(arguments)
     @Before("execution(* com.learning.springbootrest.service.JobService.*(..))")
-    public void logMethodCall() {
-        LOGGER.info("Method called");
+    public void logMethodCall(JoinPoint jp) {
+        LOGGER.info("Method called: " + jp.getSignature().getName());
     }
+
+    @After("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    public void logMethodExecute(JoinPoint jp) {
+        LOGGER.info("Method executed: " + jp.getSignature().getName());
+    }
+
+    @AfterThrowing("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    public void logMethodCrash(JoinPoint jp){
+        LOGGER.info("Method " + jp.getSignature().getName() + " has some issue");
+    }
+
+    @AfterReturning("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    public void logMethodSuccess(JoinPoint jp){
+        LOGGER.info("Method " + jp.getSignature().getName() + " executed successfully");
+    }
+
+
 }
 
 
