@@ -84,3 +84,4 @@ spring.datasource.password=YOUR_PASSWORD
 
 ## 🧑‍💻 Author
 - GitHub: [mhnuk2007](https://github.com/mhnuk2007)
+- LinkedIn: [Mohan Lal](https://www.linkedin.com/in/mohan-lal-b79790126/)
