@@ -13,22 +13,22 @@ public class LoggingAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
     //return type, class name.method name(arguments)
-    @Before("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    @Before("execution(* com.learning.springbootrest.service.UserService.*(..))")
     public void logMethodCall(JoinPoint jp) {
         LOGGER.info("Method called: " + jp.getSignature().getName());
     }
 
-    @After("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    @After("execution(* com.learning.springbootrest.service.UserService.*(..))")
     public void logMethodExecute(JoinPoint jp) {
         LOGGER.info("Method executed: " + jp.getSignature().getName());
     }
 
-    @AfterThrowing("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    @AfterThrowing("execution(* com.learning.springbootrest.service.UserService.*(..))")
     public void logMethodCrash(JoinPoint jp){
         LOGGER.info("Method " + jp.getSignature().getName() + " has some issue");
     }
 
-    @AfterReturning("execution(* com.learning.springbootrest.service.JobService.*(..))")
+    @AfterReturning("execution(* com.learning.springbootrest.service.UserService.*(..))")
     public void logMethodSuccess(JoinPoint jp){
         LOGGER.info("Method " + jp.getSignature().getName() + " executed successfully");
     }
